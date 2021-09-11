@@ -1,0 +1,64 @@
+@import './buttons.css';
+
+body {
+    background-color:#26B4BC;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.wrapper{
+    max-inline-size: 900px;
+    margin: auto;
+}
+
+.player {
+    margin-block-start: 100px;
+    
+    position: relative;
+}
+ 
+.player video{
+    inline-size: 100%;
+    aspect-ratio: 16/9;
+    vertical-align: middle;
+    object-fit: cover; /*se aplica a las imagenes, se amplia la imagen*/
+}
+.player-title {
+    color: white;
+    position:absolute;
+    inset-block-start: 0;
+    inset-inline-start:20px;
+
+}
+.player-actions {
+    position: absolute;
+    inset: 0;
+    /* border: 10px solid blue; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:20 px;
+    /*z-index: 2; */
+}
+
+.player-progress{
+   
+    position:absolute;
+    inset-block-end: 0;
+    inset-inline: 0;
+    display: flex;
+    padding: 10px;
+}
+
+.player-progress input{
+    flex: 1;
+}
+
+.player-overlay{
+    position: absolute;
+    inset: 0;
+    opacity: 0; /*que no sea visible*/
+    transition: .3s opacity; /* haga una transicion de opacidad en 3 mili segundos despues de hacer el evento*/
+}
+.player:hover .player-overlay { /*que afecte al boton dentro del reproductor*/
+opacity: 1; /* que sea visible cuando se haga el evento en el video*/
+}
